@@ -15,6 +15,15 @@
 		62DAD0CF25A8E65E0052214E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62DAD0CD25A8E65E0052214E /* LaunchScreen.storyboard */; };
 		62DAD0DA25A8E65E0052214E /* SavingsTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0D925A8E65E0052214E /* SavingsTrackerTests.swift */; };
 		62DAD0E525A8E65E0052214E /* SavingsTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0E425A8E65E0052214E /* SavingsTrackerUITests.swift */; };
+		62DAD0FB25A8E7200052214E /* Savings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0F725A8E7200052214E /* Savings.swift */; };
+		62DAD0FC25A8E7200052214E /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0F825A8E7200052214E /* Income.swift */; };
+		62DAD0FD25A8E7200052214E /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0F925A8E7200052214E /* Target.swift */; };
+		62DAD0FE25A8E7200052214E /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0FA25A8E7200052214E /* Expense.swift */; };
+		62DAD10B25A8EE4D0052214E /* TargetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD10A25A8EE4D0052214E /* TargetController.swift */; };
+		62DAD11025A8EE5E0052214E /* SavingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD10F25A8EE5E0052214E /* SavingsController.swift */; };
+		62DAD11525A8EE6E0052214E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD11425A8EE6E0052214E /* HomeController.swift */; };
+		62DAD11A25A8EE790052214E /* ExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD11925A8EE790052214E /* ExpenseController.swift */; };
+		62DAD11F25A8EE8A0052214E /* IncomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD11E25A8EE8A0052214E /* IncomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		62DAD0E025A8E65E0052214E /* SavingsTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SavingsTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DAD0E425A8E65E0052214E /* SavingsTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTrackerUITests.swift; sourceTree = "<group>"; };
 		62DAD0E625A8E65E0052214E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62DAD0F725A8E7200052214E /* Savings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Savings.swift; sourceTree = "<group>"; };
+		62DAD0F825A8E7200052214E /* Income.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
+		62DAD0F925A8E7200052214E /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		62DAD0FA25A8E7200052214E /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		62DAD10A25A8EE4D0052214E /* TargetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetController.swift; sourceTree = "<group>"; };
+		62DAD10F25A8EE5E0052214E /* SavingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsController.swift; sourceTree = "<group>"; };
+		62DAD11425A8EE6E0052214E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		62DAD11925A8EE790052214E /* ExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseController.swift; sourceTree = "<group>"; };
+		62DAD11E25A8EE8A0052214E /* IncomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +117,13 @@
 		62DAD0C125A8E65D0052214E /* SavingsTracker */ = {
 			isa = PBXGroup;
 			children = (
+				62DAD0F625A8E7140052214E /* Model */,
+				62DAD0F525A8E7060052214E /* View */,
+				62DAD10225A8E7250052214E /* Controller */,
 				62DAD0C225A8E65D0052214E /* AppDelegate.swift */,
 				62DAD0C425A8E65D0052214E /* SceneDelegate.swift */,
 				62DAD0C625A8E65D0052214E /* ViewController.swift */,
-				62DAD0C825A8E65D0052214E /* Main.storyboard */,
 				62DAD0CB25A8E65E0052214E /* Assets.xcassets */,
-				62DAD0CD25A8E65E0052214E /* LaunchScreen.storyboard */,
 				62DAD0D025A8E65E0052214E /* Info.plist */,
 			);
 			path = SavingsTracker;
@@ -126,6 +145,38 @@
 				62DAD0E625A8E65E0052214E /* Info.plist */,
 			);
 			path = SavingsTrackerUITests;
+			sourceTree = "<group>";
+		};
+		62DAD0F525A8E7060052214E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				62DAD0C825A8E65D0052214E /* Main.storyboard */,
+				62DAD0CD25A8E65E0052214E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		62DAD0F625A8E7140052214E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				62DAD0FA25A8E7200052214E /* Expense.swift */,
+				62DAD0F825A8E7200052214E /* Income.swift */,
+				62DAD0F725A8E7200052214E /* Savings.swift */,
+				62DAD0F925A8E7200052214E /* Target.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		62DAD10225A8E7250052214E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				62DAD10A25A8EE4D0052214E /* TargetController.swift */,
+				62DAD10F25A8EE5E0052214E /* SavingsController.swift */,
+				62DAD11425A8EE6E0052214E /* HomeController.swift */,
+				62DAD11925A8EE790052214E /* ExpenseController.swift */,
+				62DAD11E25A8EE8A0052214E /* IncomeController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +309,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DAD0FE25A8E7200052214E /* Expense.swift in Sources */,
+				62DAD11A25A8EE790052214E /* ExpenseController.swift in Sources */,
+				62DAD0FD25A8E7200052214E /* Target.swift in Sources */,
 				62DAD0C725A8E65D0052214E /* ViewController.swift in Sources */,
 				62DAD0C325A8E65D0052214E /* AppDelegate.swift in Sources */,
+				62DAD11525A8EE6E0052214E /* HomeController.swift in Sources */,
+				62DAD11025A8EE5E0052214E /* SavingsController.swift in Sources */,
+				62DAD10B25A8EE4D0052214E /* TargetController.swift in Sources */,
+				62DAD11F25A8EE8A0052214E /* IncomeController.swift in Sources */,
 				62DAD0C525A8E65D0052214E /* SceneDelegate.swift in Sources */,
+				62DAD0FC25A8E7200052214E /* Income.swift in Sources */,
+				62DAD0FB25A8E7200052214E /* Savings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
