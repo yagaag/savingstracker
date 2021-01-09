@@ -7,17 +7,61 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+var savings = Savings(name: "My Savings", expendableAmount: 200, inexpendableAmount: 400)
 
+public let kNotification = Notification.Name("kNotification")
+
+class HomeController: UIViewController {
+    
     @IBOutlet weak var savingsAmount: UILabel!
     @IBOutlet weak var targetAmount: UILabel!
     @IBOutlet weak var resultValue: UILabel!
-    @IBOutlet weak var executeIncome: UIButton!
-    @IBOutlet weak var executeExpense: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemTeal
+        savingsAmount.text = String(savings.totalAmount)
+        NotificationCenter.default.addObserver(self, selector: #selector(reactToNotification(_:)), name: kNotification, object: nil)
     }
+    
+    @IBAction func onExecuteIncome(_ sender: UIButton) {
+        
+        print(sender.backgroundColor)
+        
+        if sender.backgroundColor == .white {
+            sender.setTitleColor(.white, for: .normal)
+            sender.backgroundColor = .systemBlue
+        }
+        else {
+            sender.setTitleColor(.systemBlue, for: .normal)
+            sender.backgroundColor = .white
+        }
+        
+    }
+    
+    @IBAction func onExecuteExpense(_ sender: UIButton) {
+        
+        print("Expense")
+        print(sender.backgroundColor)
+
+        if sender.backgroundColor == .white {
+            sender.setTitleColor(.white, for: .normal)
+            sender.backgroundColor = .systemBlue
+        }
+        else {
+            sender.setTitleColor(.systemBlue, for: .normal)
+            sender.backgroundColor = .white
+        }
+        
+    }
+    
+    @objc func reactToNotification(_ sender: Notification) {
+        
+        print("Reacting...")
+        
+        savingsAmount.text = String(savings.totalAmount)
+    }
+    
 }
 
 //if sender.backgroundColor == .clear {
