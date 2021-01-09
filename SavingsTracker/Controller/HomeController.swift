@@ -21,6 +21,7 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemTeal
         savingsAmount.text = String(savings.totalAmount)
+        targetAmount.text = String(SavingsTracker.target.amount)
         NotificationCenter.default.addObserver(self, selector: #selector(reactToNotification(_:)), name: kNotification, object: nil)
     }
     
@@ -60,6 +61,7 @@ class HomeController: UIViewController {
         print("Reacting...")
         
         savingsAmount.text = String(savings.totalAmount)
+        targetAmount.text = String(SavingsTracker.target.amount)
     }
     
 }
