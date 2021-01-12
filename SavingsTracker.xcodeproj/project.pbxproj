@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		620FB23025AE0DBD00DBA1EE /* TargetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620FB22F25AE0DBD00DBA1EE /* TargetController.swift */; };
+		620FB23525AE0DCB00DBA1EE /* IncomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620FB23425AE0DCB00DBA1EE /* IncomeController.swift */; };
+		620FB23A25AE0DD600DBA1EE /* ExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620FB23925AE0DD600DBA1EE /* ExpenseController.swift */; };
 		62DAD0C325A8E65D0052214E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0C225A8E65D0052214E /* AppDelegate.swift */; };
 		62DAD0C525A8E65D0052214E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0C425A8E65D0052214E /* SceneDelegate.swift */; };
 		62DAD0C725A8E65D0052214E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0C625A8E65D0052214E /* ViewController.swift */; };
@@ -19,11 +22,11 @@
 		62DAD0FC25A8E7200052214E /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0F825A8E7200052214E /* Income.swift */; };
 		62DAD0FD25A8E7200052214E /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0F925A8E7200052214E /* Target.swift */; };
 		62DAD0FE25A8E7200052214E /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0FA25A8E7200052214E /* Expense.swift */; };
-		62DAD10B25A8EE4D0052214E /* TargetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD10A25A8EE4D0052214E /* TargetController.swift */; };
+		62DAD10B25A8EE4D0052214E /* AddTargetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD10A25A8EE4D0052214E /* AddTargetController.swift */; };
 		62DAD11025A8EE5E0052214E /* SavingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD10F25A8EE5E0052214E /* SavingsController.swift */; };
 		62DAD11525A8EE6E0052214E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD11425A8EE6E0052214E /* HomeController.swift */; };
-		62DAD11A25A8EE790052214E /* ExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD11925A8EE790052214E /* ExpenseController.swift */; };
-		62DAD11F25A8EE8A0052214E /* IncomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD11E25A8EE8A0052214E /* IncomeController.swift */; };
+		62DAD11A25A8EE790052214E /* AddExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD11925A8EE790052214E /* AddExpenseController.swift */; };
+		62DAD11F25A8EE8A0052214E /* AddIncomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD11E25A8EE8A0052214E /* AddIncomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		620FB22F25AE0DBD00DBA1EE /* TargetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetController.swift; sourceTree = "<group>"; };
+		620FB23425AE0DCB00DBA1EE /* IncomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeController.swift; sourceTree = "<group>"; };
+		620FB23925AE0DD600DBA1EE /* ExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseController.swift; sourceTree = "<group>"; };
 		62DAD0BF25A8E65D0052214E /* SavingsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SavingsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DAD0C225A8E65D0052214E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62DAD0C425A8E65D0052214E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,11 +68,11 @@
 		62DAD0F825A8E7200052214E /* Income.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		62DAD0F925A8E7200052214E /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		62DAD0FA25A8E7200052214E /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
-		62DAD10A25A8EE4D0052214E /* TargetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetController.swift; sourceTree = "<group>"; };
+		62DAD10A25A8EE4D0052214E /* AddTargetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTargetController.swift; sourceTree = "<group>"; };
 		62DAD10F25A8EE5E0052214E /* SavingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsController.swift; sourceTree = "<group>"; };
 		62DAD11425A8EE6E0052214E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
-		62DAD11925A8EE790052214E /* ExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseController.swift; sourceTree = "<group>"; };
-		62DAD11E25A8EE8A0052214E /* IncomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeController.swift; sourceTree = "<group>"; };
+		62DAD11925A8EE790052214E /* AddExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseController.swift; sourceTree = "<group>"; };
+		62DAD11E25A8EE8A0052214E /* AddIncomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		620FB23E25AE0DDC00DBA1EE /* Income */ = {
+			isa = PBXGroup;
+			children = (
+				620FB23425AE0DCB00DBA1EE /* IncomeController.swift */,
+				62DAD11E25A8EE8A0052214E /* AddIncomeController.swift */,
+			);
+			path = Income;
+			sourceTree = "<group>";
+		};
+		620FB23F25AE0DEA00DBA1EE /* Expense */ = {
+			isa = PBXGroup;
+			children = (
+				620FB23925AE0DD600DBA1EE /* ExpenseController.swift */,
+				62DAD11925A8EE790052214E /* AddExpenseController.swift */,
+			);
+			path = Expense;
+			sourceTree = "<group>";
+		};
+		620FB24025AE0DF700DBA1EE /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				620FB22F25AE0DBD00DBA1EE /* TargetController.swift */,
+				62DAD10A25A8EE4D0052214E /* AddTargetController.swift */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
 		62DAD0B625A8E65D0052214E = {
 			isa = PBXGroup;
 			children = (
@@ -170,11 +203,11 @@
 		62DAD10225A8E7250052214E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				62DAD10A25A8EE4D0052214E /* TargetController.swift */,
+				620FB24025AE0DF700DBA1EE /* Target */,
+				620FB23F25AE0DEA00DBA1EE /* Expense */,
+				620FB23E25AE0DDC00DBA1EE /* Income */,
 				62DAD10F25A8EE5E0052214E /* SavingsController.swift */,
 				62DAD11425A8EE6E0052214E /* HomeController.swift */,
-				62DAD11925A8EE790052214E /* ExpenseController.swift */,
-				62DAD11E25A8EE8A0052214E /* IncomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,15 +342,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				620FB23A25AE0DD600DBA1EE /* ExpenseController.swift in Sources */,
+				620FB23525AE0DCB00DBA1EE /* IncomeController.swift in Sources */,
 				62DAD0FE25A8E7200052214E /* Expense.swift in Sources */,
-				62DAD11A25A8EE790052214E /* ExpenseController.swift in Sources */,
+				62DAD11A25A8EE790052214E /* AddExpenseController.swift in Sources */,
 				62DAD0FD25A8E7200052214E /* Target.swift in Sources */,
 				62DAD0C725A8E65D0052214E /* ViewController.swift in Sources */,
 				62DAD0C325A8E65D0052214E /* AppDelegate.swift in Sources */,
 				62DAD11525A8EE6E0052214E /* HomeController.swift in Sources */,
 				62DAD11025A8EE5E0052214E /* SavingsController.swift in Sources */,
-				62DAD10B25A8EE4D0052214E /* TargetController.swift in Sources */,
-				62DAD11F25A8EE8A0052214E /* IncomeController.swift in Sources */,
+				62DAD10B25A8EE4D0052214E /* AddTargetController.swift in Sources */,
+				620FB23025AE0DBD00DBA1EE /* TargetController.swift in Sources */,
+				62DAD11F25A8EE8A0052214E /* AddIncomeController.swift in Sources */,
 				62DAD0C525A8E65D0052214E /* SceneDelegate.swift in Sources */,
 				62DAD0FC25A8E7200052214E /* Income.swift in Sources */,
 				62DAD0FB25A8E7200052214E /* Savings.swift in Sources */,

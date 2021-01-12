@@ -9,7 +9,13 @@ import UIKit
 
 var expense = Expense(name: "test", amount: 100, target: Date(), isExecuted: false)
 
-class ExpenseController: UIViewController {
+protocol AddExpenseControllerDelegate : NSObjectProtocol {
+    func reactToAddExpense(actionType: String, name: String, amount: String)
+}
+
+class AddExpenseController: UIViewController {
+    
+    weak var delegate: AddExpenseControllerDelegate?
     
     let nc = NotificationCenter.default
     
@@ -35,9 +41,17 @@ class ExpenseController: UIViewController {
             }
         }
         
-        expenseName.text = ""
-        expenseAmount.text = ""
-        
+        if let delegate = delegate {
+            delegate.reactToAddExpense(actionType: "Add", name: expenseName.text!, amount: expenseAmount.text!)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func onBackPressed(_ sender: UIButton) {
+        if let delegate = delegate {
+            delegate.reactToAddExpense(actionType: "Back", name: "nil", amount: "nil")
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

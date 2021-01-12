@@ -9,7 +9,13 @@ import UIKit
 
 var income = Income(name: "test", amount: 100, isExpendable: false, target: Date(), isExecuted: false)
 
-class IncomeController: UIViewController {
+protocol AddIncomeControllerDelegate : NSObjectProtocol {
+    func reactToAddIncome(actionType: String, name: String, amount: String)
+}
+
+class AddIncomeController: UIViewController {
+    
+    weak var delegate: AddIncomeControllerDelegate?
     
     // Notify to HomeController
     let nc = NotificationCenter.default
@@ -34,11 +40,21 @@ class IncomeController: UIViewController {
                 savings.totalAmount = savings.totalAmount + income.amount
                 nc.post(name: kNotification, object: nil)
             }
+            
+            if let delegate = delegate {
+                delegate.reactToAddIncome(actionType: "Add", name: incomeName.text!, amount: incomeAmount.text!)
+            }
+            self.dismiss(animated: true, completion: nil)
+            
         }
-        
-        incomeName.text = ""
-        incomeAmount.text = ""
-        
+    }
+    
+    
+    @IBAction func onBackPressed(_ sender: UIButton) {
+        if let delegate = delegate {
+            delegate.reactToAddIncome(actionType: "Back", name: "nil", amount: "nil")
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

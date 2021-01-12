@@ -9,7 +9,13 @@ import UIKit
 
 var target = Target(name: "test", amount: 100, date: Date())
 
-class TargetController: UIViewController {
+protocol AddTargetControllerDelegate : NSObjectProtocol {
+    func reactToAddTarget(actionType: String, name: String, amount: String)
+}
+
+class AddTargetController: UIViewController {
+    
+    weak var delegate: AddTargetControllerDelegate?
     
     // Notify to HomeController
     let nc = NotificationCenter.default
@@ -20,10 +26,9 @@ class TargetController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
-    @IBAction func onTargetChanged(_ sender: UIButton) {
+    @IBAction func onTargetAdded(_ sender: UIButton) {
         
         targetName.endEditing(true)
         targetAmount.endEditing(true)
@@ -32,11 +37,18 @@ class TargetController: UIViewController {
             print(SavingsTracker.target.amount)
             nc.post(name: kNotification, object: nil)
         }
-        
-        targetName.text = ""
-        targetAmount.text = ""
-        
+        if let delegate = delegate {
+            delegate.reactToAddTarget(actionType: "Add", name: targetName.text!, amount: targetAmount.text!)
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     
+    @IBAction func onBackPressed(_ sender: UIButton) {
+        
+        if let delegate = delegate {
+            delegate.reactToAddTarget(actionType: "Back", name: "nil", amount: "nil")
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
 }
