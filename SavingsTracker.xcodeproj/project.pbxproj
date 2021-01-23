@@ -18,8 +18,6 @@
 		62DAD0CA25A8E65D0052214E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62DAD0C825A8E65D0052214E /* Main.storyboard */; };
 		62DAD0CC25A8E65E0052214E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62DAD0CB25A8E65E0052214E /* Assets.xcassets */; };
 		62DAD0CF25A8E65E0052214E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62DAD0CD25A8E65E0052214E /* LaunchScreen.storyboard */; };
-		62DAD0DA25A8E65E0052214E /* SavingsTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0D925A8E65E0052214E /* SavingsTrackerTests.swift */; };
-		62DAD0E525A8E65E0052214E /* SavingsTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0E425A8E65E0052214E /* SavingsTrackerUITests.swift */; };
 		62DAD0FB25A8E7200052214E /* Savings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0F725A8E7200052214E /* Savings.swift */; };
 		62DAD0FC25A8E7200052214E /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0F825A8E7200052214E /* Income.swift */; };
 		62DAD0FD25A8E7200052214E /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0F925A8E7200052214E /* Target.swift */; };
@@ -30,23 +28,6 @@
 		62DAD11A25A8EE790052214E /* AddExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD11925A8EE790052214E /* AddExpenseController.swift */; };
 		62DAD11F25A8EE8A0052214E /* AddIncomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD11E25A8EE8A0052214E /* AddIncomeController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		62DAD0D625A8E65E0052214E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 62DAD0B725A8E65D0052214E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 62DAD0BE25A8E65D0052214E;
-			remoteInfo = SavingsTracker;
-		};
-		62DAD0E125A8E65E0052214E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 62DAD0B725A8E65D0052214E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 62DAD0BE25A8E65D0052214E;
-			remoteInfo = SavingsTracker;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		620FB22F25AE0DBD00DBA1EE /* TargetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetController.swift; sourceTree = "<group>"; };
@@ -62,10 +43,8 @@
 		62DAD0CB25A8E65E0052214E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62DAD0CE25A8E65E0052214E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62DAD0D025A8E65E0052214E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62DAD0D525A8E65E0052214E /* SavingsTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SavingsTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DAD0D925A8E65E0052214E /* SavingsTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTrackerTests.swift; sourceTree = "<group>"; };
 		62DAD0DB25A8E65E0052214E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62DAD0E025A8E65E0052214E /* SavingsTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SavingsTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DAD0E425A8E65E0052214E /* SavingsTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTrackerUITests.swift; sourceTree = "<group>"; };
 		62DAD0E625A8E65E0052214E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62DAD0F725A8E7200052214E /* Savings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Savings.swift; sourceTree = "<group>"; };
@@ -81,20 +60,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		62DAD0BC25A8E65D0052214E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		62DAD0D225A8E65E0052214E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		62DAD0DD25A8E65E0052214E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -147,8 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				62DAD0BF25A8E65D0052214E /* SavingsTracker.app */,
-				62DAD0D525A8E65E0052214E /* SavingsTrackerTests.xctest */,
-				62DAD0E025A8E65E0052214E /* SavingsTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,42 +201,6 @@
 			productReference = 62DAD0BF25A8E65D0052214E /* SavingsTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		62DAD0D425A8E65E0052214E /* SavingsTrackerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 62DAD0EC25A8E65E0052214E /* Build configuration list for PBXNativeTarget "SavingsTrackerTests" */;
-			buildPhases = (
-				62DAD0D125A8E65E0052214E /* Sources */,
-				62DAD0D225A8E65E0052214E /* Frameworks */,
-				62DAD0D325A8E65E0052214E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				62DAD0D725A8E65E0052214E /* PBXTargetDependency */,
-			);
-			name = SavingsTrackerTests;
-			productName = SavingsTrackerTests;
-			productReference = 62DAD0D525A8E65E0052214E /* SavingsTrackerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		62DAD0DF25A8E65E0052214E /* SavingsTrackerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 62DAD0EF25A8E65E0052214E /* Build configuration list for PBXNativeTarget "SavingsTrackerUITests" */;
-			buildPhases = (
-				62DAD0DC25A8E65E0052214E /* Sources */,
-				62DAD0DD25A8E65E0052214E /* Frameworks */,
-				62DAD0DE25A8E65E0052214E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				62DAD0E225A8E65E0052214E /* PBXTargetDependency */,
-			);
-			name = SavingsTrackerUITests;
-			productName = SavingsTrackerUITests;
-			productReference = 62DAD0E025A8E65E0052214E /* SavingsTrackerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -285,14 +212,6 @@
 				TargetAttributes = {
 					62DAD0BE25A8E65D0052214E = {
 						CreatedOnToolsVersion = 12.2;
-					};
-					62DAD0D425A8E65E0052214E = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = 62DAD0BE25A8E65D0052214E;
-					};
-					62DAD0DF25A8E65E0052214E = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = 62DAD0BE25A8E65D0052214E;
 					};
 				};
 			};
@@ -310,8 +229,6 @@
 			projectRoot = "";
 			targets = (
 				62DAD0BE25A8E65D0052214E /* SavingsTracker */,
-				62DAD0D425A8E65E0052214E /* SavingsTrackerTests */,
-				62DAD0DF25A8E65E0052214E /* SavingsTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -324,20 +241,6 @@
 				62DAD0CF25A8E65E0052214E /* LaunchScreen.storyboard in Resources */,
 				62DAD0CC25A8E65E0052214E /* Assets.xcassets in Resources */,
 				62DAD0CA25A8E65D0052214E /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		62DAD0D325A8E65E0052214E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		62DAD0DE25A8E65E0052214E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,36 +271,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		62DAD0D125A8E65E0052214E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				62DAD0DA25A8E65E0052214E /* SavingsTrackerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		62DAD0DC25A8E65E0052214E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				62DAD0E525A8E65E0052214E /* SavingsTrackerUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		62DAD0D725A8E65E0052214E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 62DAD0BE25A8E65D0052214E /* SavingsTracker */;
-			targetProxy = 62DAD0D625A8E65E0052214E /* PBXContainerItemProxy */;
-		};
-		62DAD0E225A8E65E0052214E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 62DAD0BE25A8E65D0052214E /* SavingsTracker */;
-			targetProxy = 62DAD0E125A8E65E0052214E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		62DAD0C825A8E65D0052214E /* Main.storyboard */ = {
@@ -573,90 +447,6 @@
 			};
 			name = Release;
 		};
-		62DAD0ED25A8E65E0052214E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3NJG9U65QY;
-				INFOPLIST_FILE = SavingsTrackerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.YagaaGowtham.SavingsTrackerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SavingsTracker.app/SavingsTracker";
-			};
-			name = Debug;
-		};
-		62DAD0EE25A8E65E0052214E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3NJG9U65QY;
-				INFOPLIST_FILE = SavingsTrackerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.YagaaGowtham.SavingsTrackerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SavingsTracker.app/SavingsTracker";
-			};
-			name = Release;
-		};
-		62DAD0F025A8E65E0052214E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3NJG9U65QY;
-				INFOPLIST_FILE = SavingsTrackerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.YagaaGowtham.SavingsTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SavingsTracker;
-			};
-			name = Debug;
-		};
-		62DAD0F125A8E65E0052214E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3NJG9U65QY;
-				INFOPLIST_FILE = SavingsTrackerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.YagaaGowtham.SavingsTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SavingsTracker;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -674,24 +464,6 @@
 			buildConfigurations = (
 				62DAD0EA25A8E65E0052214E /* Debug */,
 				62DAD0EB25A8E65E0052214E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		62DAD0EC25A8E65E0052214E /* Build configuration list for PBXNativeTarget "SavingsTrackerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				62DAD0ED25A8E65E0052214E /* Debug */,
-				62DAD0EE25A8E65E0052214E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		62DAD0EF25A8E65E0052214E /* Build configuration list for PBXNativeTarget "SavingsTrackerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				62DAD0F025A8E65E0052214E /* Debug */,
-				62DAD0F125A8E65E0052214E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
