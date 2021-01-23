@@ -43,10 +43,6 @@
 		62DAD0CB25A8E65E0052214E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62DAD0CE25A8E65E0052214E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62DAD0D025A8E65E0052214E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62DAD0D925A8E65E0052214E /* SavingsTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTrackerTests.swift; sourceTree = "<group>"; };
-		62DAD0DB25A8E65E0052214E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62DAD0E425A8E65E0052214E /* SavingsTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTrackerUITests.swift; sourceTree = "<group>"; };
-		62DAD0E625A8E65E0052214E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62DAD0F725A8E7200052214E /* Savings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Savings.swift; sourceTree = "<group>"; };
 		62DAD0F825A8E7200052214E /* Income.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		62DAD0F925A8E7200052214E /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
@@ -102,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				62DAD0C125A8E65D0052214E /* SavingsTracker */,
-				62DAD0D825A8E65E0052214E /* SavingsTrackerTests */,
-				62DAD0E325A8E65E0052214E /* SavingsTrackerUITests */,
 				62DAD0C025A8E65D0052214E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,24 +123,6 @@
 				62DAD0D025A8E65E0052214E /* Info.plist */,
 			);
 			path = SavingsTracker;
-			sourceTree = "<group>";
-		};
-		62DAD0D825A8E65E0052214E /* SavingsTrackerTests */ = {
-			isa = PBXGroup;
-			children = (
-				62DAD0D925A8E65E0052214E /* SavingsTrackerTests.swift */,
-				62DAD0DB25A8E65E0052214E /* Info.plist */,
-			);
-			path = SavingsTrackerTests;
-			sourceTree = "<group>";
-		};
-		62DAD0E325A8E65E0052214E /* SavingsTrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				62DAD0E425A8E65E0052214E /* SavingsTrackerUITests.swift */,
-				62DAD0E625A8E65E0052214E /* Info.plist */,
-			);
-			path = SavingsTrackerUITests;
 			sourceTree = "<group>";
 		};
 		62DAD0F525A8E7060052214E /* View */ = {

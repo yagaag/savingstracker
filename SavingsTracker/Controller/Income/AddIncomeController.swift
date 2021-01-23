@@ -10,7 +10,7 @@ import UIKit
 var income = Income(name: "test", amount: 100, isExpendable: false, target: Date(), isExecuted: false)
 
 protocol AddIncomeControllerDelegate : NSObjectProtocol {
-    func reactToAddIncome(actionType: String, name: String, amount: String)
+    func reactToAddIncome(actionType: String, name: String, amount: String, isExecuted: Bool)
 }
 
 class AddIncomeController: UIViewController {
@@ -42,17 +42,16 @@ class AddIncomeController: UIViewController {
             }
             
             if let delegate = delegate {
-                delegate.reactToAddIncome(actionType: "Add", name: incomeName.text!, amount: incomeAmount.text!)
+                delegate.reactToAddIncome(actionType: "Add", name: incomeName.text!, amount: incomeAmount.text!, isExecuted: executedSwitch.isOn)
             }
             self.dismiss(animated: true, completion: nil)
             
         }
     }
     
-    
     @IBAction func onBackPressed(_ sender: UIButton) {
         if let delegate = delegate {
-            delegate.reactToAddIncome(actionType: "Back", name: "nil", amount: "nil")
+            delegate.reactToAddIncome(actionType: "Back", name: "nil", amount: "nil", isExecuted: false)
         }
         self.dismiss(animated: true, completion: nil)
     }

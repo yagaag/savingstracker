@@ -10,7 +10,7 @@ import UIKit
 var expense = Expense(name: "test", amount: 100, target: Date(), isExecuted: false)
 
 protocol AddExpenseControllerDelegate : NSObjectProtocol {
-    func reactToAddExpense(actionType: String, name: String, amount: String)
+    func reactToAddExpense(actionType: String, name: String, amount: String, isExecuted: Bool)
 }
 
 class AddExpenseController: UIViewController {
@@ -42,14 +42,14 @@ class AddExpenseController: UIViewController {
         }
         
         if let delegate = delegate {
-            delegate.reactToAddExpense(actionType: "Add", name: expenseName.text!, amount: expenseAmount.text!)
+            delegate.reactToAddExpense(actionType: "Add", name: expenseName.text!, amount: expenseAmount.text!, isExecuted: executedSwitch.isOn)
         }
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onBackPressed(_ sender: UIButton) {
         if let delegate = delegate {
-            delegate.reactToAddExpense(actionType: "Back", name: "nil", amount: "nil")
+            delegate.reactToAddExpense(actionType: "Back", name: "nil", amount: "nil", isExecuted: false)
         }
         self.dismiss(animated: true, completion: nil)
     }

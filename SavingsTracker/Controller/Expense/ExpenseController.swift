@@ -36,8 +36,10 @@ class ExpenseController: UIViewController, UINavigationControllerDelegate, AddEx
         }
     }
     
-    func reactToAddExpense(actionType: String, name: String, amount: String) {
-        print("\(actionType), \(name), \(amount)")
+    func reactToAddExpense(actionType: String, name: String, amount: String, isExecuted: Bool) {
+        expenses.append(Expense(name: name, amount: Float(amount)!, target: Date(), isExecuted: isExecuted))
+        self.tableView.reloadData()
+        (executedExpense.text, totalExpense.text) = getExpenses()
     }
     
     func getExpenses() -> (String, String) {

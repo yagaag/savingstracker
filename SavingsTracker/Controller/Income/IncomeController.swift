@@ -37,8 +37,10 @@ class IncomeController: UIViewController, UINavigationControllerDelegate, AddInc
         }
     }
     
-    func reactToAddIncome(actionType: String, name: String, amount: String) {
-        print("\(actionType), \(name), \(amount)")
+    func reactToAddIncome(actionType: String, name: String, amount: String, isExecuted: Bool) {
+        incomes.append(Income(name: name, amount: Float(amount)!, isExpendable: true, target: Date(), isExecuted: isExecuted))
+        self.tableView.reloadData()
+        (executedIncome.text, totalIncome.text) = getIncomes()
     }
     
     func getIncomes() -> (String, String) {
