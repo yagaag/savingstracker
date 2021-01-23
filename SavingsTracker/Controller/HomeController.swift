@@ -18,6 +18,7 @@ class HomeController: UIViewController {
     var incomes: Array<Income> = [Income(name: "Barath", amount: 3000, isExpendable: true, target: Date(), isExecuted: false), Income(name: "Sneha", amount: 10000, isExpendable: true, target: Date(), isExecuted: false)]
     
     
+    @IBOutlet weak var markStack: UIStackView!
     @IBOutlet weak var expenseTableView: UITableView!
     @IBOutlet weak var incomeTableView: UITableView!
     
@@ -28,6 +29,7 @@ class HomeController: UIViewController {
         self.expenseTableView.rowHeight = 60.0
         self.incomeTableView.rowHeight = 60.0
         incomeTableView.isHidden = true
+        markStack.customize(backgroundColor: .systemGreen, radiusSize: 12.0)
     }
     
     @objc func reactToNotification(_ sender: Notification) {
@@ -53,7 +55,7 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
         return tableView == self.expenseTableView ? expenses.count : incomes.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(tableView == self.expenseTableView)
+        
         if tableView == self.expenseTableView {
             let expense = expenses[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeExpenseCell") as! ExpenseCell
@@ -66,5 +68,18 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
             cell.setIncome(income: income)
             return cell
         }
+    }
+}
+
+extension UIStackView {
+    func customize(backgroundColor: UIColor, radiusSize: CGFloat) {
+        let subView = UIView(frame: bounds)
+        subView.backgroundColor = backgroundColor
+        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        insertSubview(subView, at: 0)
+        print(radiusSize)
+        subView.layer.cornerRadius = radiusSize
+        subView.layer.masksToBounds = true        
+        subView.clipsToBounds = true
     }
 }
