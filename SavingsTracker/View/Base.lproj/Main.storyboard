@@ -486,6 +486,9 @@
                                     <segment title="Expense"/>
                                     <segment title="Income"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onTableChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="e1G-sf-GxQ"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NoK-m6-INV" userLabel="ExpenseView">
                                 <rect key="frame" x="0.0" y="307" width="414" height="506"/>
@@ -530,6 +533,49 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="dIV-CS-QLO"/>
                                 </connections>
                             </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oGj-D5-KaP" userLabel="IncomeView">
+                                <rect key="frame" x="0.0" y="307" width="414" height="506"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeIncomeCell" rowHeight="60" id="H02-qi-N1r" customClass="IncomeCell" customModule="SavingsTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H02-qi-N1r" id="COU-V8-NhD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8f-LP-CPq">
+                                                    <rect key="frame" x="20" y="20" width="120" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDz-w7-DnV">
+                                                    <rect key="frame" x="147" y="20" width="120" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBP-yW-9sL">
+                                                    <rect key="frame" x="347" y="15" width="49" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="executeSwitch" destination="dBP-yW-9sL" id="YJy-Iz-gVX"/>
+                                            <outlet property="incomeAmount" destination="mDz-w7-DnV" id="aKA-cc-Kdu"/>
+                                            <outlet property="incomeName" destination="i8f-LP-CPq" id="nzo-JS-P4H"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="3mV-vF-4z0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7Kx-VM-Cft"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pfc-MF-c2m"/>
                         <color key="backgroundColor" red="0.97933279419999997" green="0.97807776489999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -537,12 +583,15 @@
                             <constraint firstItem="pfc-MF-c2m" firstAttribute="trailing" secondItem="YmO-sr-oIC" secondAttribute="trailing" constant="60" id="12x-q8-ZtH"/>
                             <constraint firstItem="ANG-nC-500" firstAttribute="leading" secondItem="pfc-MF-c2m" secondAttribute="leading" id="5rN-Oy-ySE"/>
                             <constraint firstItem="NoK-m6-INV" firstAttribute="leading" secondItem="pfc-MF-c2m" secondAttribute="leading" id="BSF-iI-Gik"/>
+                            <constraint firstItem="oGj-D5-KaP" firstAttribute="leading" secondItem="pfc-MF-c2m" secondAttribute="leading" id="DIp-Ba-ePN"/>
                             <constraint firstItem="N7V-Lc-Lxa" firstAttribute="top" secondItem="Or5-HP-Jiz" secondAttribute="bottom" constant="20" id="Gd7-2C-Lsh"/>
                             <constraint firstItem="N7V-Lc-Lxa" firstAttribute="leading" secondItem="fCC-nY-hGB" secondAttribute="leading" constant="20" id="IzS-P6-fVn"/>
                             <constraint firstItem="YmO-sr-oIC" firstAttribute="leading" secondItem="pfc-MF-c2m" secondAttribute="leading" constant="60" id="MVU-HY-4uF"/>
                             <constraint firstItem="Or5-HP-Jiz" firstAttribute="leading" secondItem="pfc-MF-c2m" secondAttribute="leading" id="Rub-Gp-8Un"/>
                             <constraint firstItem="NoK-m6-INV" firstAttribute="top" secondItem="YmO-sr-oIC" secondAttribute="bottom" constant="8" id="UHV-zv-05w"/>
                             <constraint firstItem="Or5-HP-Jiz" firstAttribute="top" secondItem="ANG-nC-500" secondAttribute="bottom" id="W9c-jg-MpS"/>
+                            <constraint firstItem="oGj-D5-KaP" firstAttribute="top" secondItem="YmO-sr-oIC" secondAttribute="bottom" constant="8" id="Wa0-eG-KlB"/>
+                            <constraint firstItem="pfc-MF-c2m" firstAttribute="trailing" secondItem="oGj-D5-KaP" secondAttribute="trailing" id="XLR-Ln-xR4"/>
                             <constraint firstItem="Or5-HP-Jiz" firstAttribute="top" secondItem="ANG-nC-500" secondAttribute="bottom" id="Y0h-ti-yc6"/>
                             <constraint firstItem="ANG-nC-500" firstAttribute="top" secondItem="pfc-MF-c2m" secondAttribute="top" id="bmp-ZL-e0h"/>
                             <constraint firstItem="pfc-MF-c2m" firstAttribute="trailing" secondItem="ANG-nC-500" secondAttribute="trailing" id="eLM-lH-w0d"/>
@@ -551,11 +600,13 @@
                             <constraint firstAttribute="trailing" secondItem="N7V-Lc-Lxa" secondAttribute="trailing" constant="20" id="mNt-cl-knK"/>
                             <constraint firstItem="YmO-sr-oIC" firstAttribute="top" secondItem="N7V-Lc-Lxa" secondAttribute="bottom" constant="24" id="qW5-zb-ePn"/>
                             <constraint firstItem="NoK-m6-INV" firstAttribute="bottom" secondItem="pfc-MF-c2m" secondAttribute="bottom" id="uWW-xq-eTd"/>
+                            <constraint firstItem="pfc-MF-c2m" firstAttribute="bottom" secondItem="oGj-D5-KaP" secondAttribute="bottom" id="uyH-1E-YMm"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="tE9-L9-3Bc"/>
                     <connections>
                         <outlet property="expenseTableView" destination="NoK-m6-INV" id="CpC-sL-muU"/>
+                        <outlet property="incomeTableView" destination="oGj-D5-KaP" id="6hc-kv-tWW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
