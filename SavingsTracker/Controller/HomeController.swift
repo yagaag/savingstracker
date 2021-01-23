@@ -13,66 +13,32 @@ public let kNotification = Notification.Name("kNotification")
 
 class HomeController: UIViewController {
     
-    @IBOutlet weak var savingsAmount: UILabel!
-    @IBOutlet weak var targetAmount: UILabel!
-    @IBOutlet weak var resultValue: UILabel!
+    var expenses: Array<Expense> = [Expense(name: "Car", amount: 1000, target: Date(), isExecuted: false), Expense(name: "Bike", amount: 100, target: Date(), isExecuted: true)]
+    
+    
+    @IBOutlet weak var expenseTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemTeal
-        savingsAmount.text = String(savings.totalAmount)
-        targetAmount.text = String(SavingsTracker.target.amount)
-        resultValue.text = String(Int(savings.totalAmount - SavingsTracker.target.amount))
         NotificationCenter.default.addObserver(self, selector: #selector(reactToNotification(_:)), name: kNotification, object: nil)
-    }
-    
-    @IBAction func onExecuteIncome(_ sender: UIButton) {
-        
-        print(sender.backgroundColor)
-        
-        if sender.backgroundColor == .white {
-            sender.setTitleColor(.white, for: .normal)
-            sender.backgroundColor = .systemBlue
-        }
-        else {
-            sender.setTitleColor(.systemBlue, for: .normal)
-            sender.backgroundColor = .white
-        }
-        
-    }
-    
-    @IBAction func onExecuteExpense(_ sender: UIButton) {
-        
-        print("Expense")
-        print(sender.backgroundColor)
-
-        if sender.backgroundColor == .white {
-            sender.setTitleColor(.white, for: .normal)
-            sender.backgroundColor = .systemBlue
-        }
-        else {
-            sender.setTitleColor(.systemBlue, for: .normal)
-            sender.backgroundColor = .white
-        }
-        
+        self.expenseTableView.rowHeight = 60.0
     }
     
     @objc func reactToNotification(_ sender: Notification) {
         
         print("Reacting...")
-        
-        savingsAmount.text = String(savings.totalAmount)
-        targetAmount.text = String(SavingsTracker.target.amount)
-        resultValue.text = String(Int(savings.totalAmount - SavingsTracker.target.amount))
     }
     
 }
 
-//if sender.backgroundColor == .clear {
-//    sender.setTitleColor(.white, for: .normal)
-//    sender.backgroundColor = .systemBlue
-//}
-//else {
-//    sender.setTitleColor(.systemBlue, for: .normal)
-//    sender.backgroundColor = .clear
-//}
+extension HomeController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return expenses.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let expense = expenses[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeExpenseCell") as! ExpenseCell
+        cell.setExpense(expense: expense)
+        return cell
+    }
+}
