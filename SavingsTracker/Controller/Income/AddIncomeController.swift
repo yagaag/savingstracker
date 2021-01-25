@@ -51,7 +51,7 @@ class AddIncomeController: UIViewController {
     
     @IBAction func onBackPressed(_ sender: UIButton) {
         if let delegate = delegate {
-            delegate.reactToAddIncome(actionType: "Back", name: "nil", amount: "nil", isExecuted: false)
+            delegate.reactToAddIncome(actionType: "Back", name: "nil", amount: "0", isExecuted: false)
         }
         self.dismiss(animated: true, completion: nil)
     }

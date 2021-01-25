@@ -49,7 +49,7 @@ class AddExpenseController: UIViewController {
     
     @IBAction func onBackPressed(_ sender: UIButton) {
         if let delegate = delegate {
-            delegate.reactToAddExpense(actionType: "Back", name: "nil", amount: "nil", isExecuted: false)
+            delegate.reactToAddExpense(actionType: "Back", name: "nil", amount: "0", isExecuted: false)
         }
         self.dismiss(animated: true, completion: nil)
     }

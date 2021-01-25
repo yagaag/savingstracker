@@ -149,18 +149,6 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-//extension UIStackView {
-//    func customize(backgroundColor: UIColor, radiusSize: CGFloat) {
-//        let subView = UIView(frame: bounds)
-//        subView.backgroundColor = backgroundColor
-//        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        insertSubview(subView, at: 0)
-//        subView.layer.cornerRadius = radiusSize
-//        subView.layer.masksToBounds = true
-//        subView.clipsToBounds = true
-//    }
-//}
-
 func computeMark() -> (Bool, Float) {
     let value = defaultSavings.totalAmount - defaultTarget.amount
     if value < 0 {

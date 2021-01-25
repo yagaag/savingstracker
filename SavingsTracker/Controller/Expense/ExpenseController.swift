@@ -36,13 +36,15 @@ class ExpenseController: UIViewController, UINavigationControllerDelegate, AddEx
     }
     
     func reactToAddExpense(actionType: String, name: String, amount: String, isExecuted: Bool) {
-        expenses.append(Expense(name: name, amount: Float(amount)!, target: Date(), isExecuted: isExecuted))
-        self.tableView.reloadData()
-        let (a, b) = getExpenses()
-        (executedExpense.text, totalExpense.text) = (String(a), String(b))
-        // Notify to HomeController
-        let nc = NotificationCenter.default
-        nc.post(name: expenseNotification, object: nil)
+        if actionType == "Add" {
+            expenses.append(Expense(name: name, amount: Float(amount)!, target: Date(), isExecuted: isExecuted))
+            self.tableView.reloadData()
+            let (a, b) = getExpenses()
+            (executedExpense.text, totalExpense.text) = (String(a), String(b))
+            // Notify to HomeController
+            let nc = NotificationCenter.default
+            nc.post(name: expenseNotification, object: nil)
+        }
     }
     
     @objc func reactToExpenseNotification(_ sender: Notification) {

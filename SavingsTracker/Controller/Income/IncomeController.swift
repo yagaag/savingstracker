@@ -37,13 +37,15 @@ class IncomeController: UIViewController, UINavigationControllerDelegate, AddInc
     }
     
     func reactToAddIncome(actionType: String, name: String, amount: String, isExecuted: Bool) {
-        incomes.append(Income(name: name, amount: Float(amount)!, isExpendable: true, target: Date(), isExecuted: isExecuted))
-        self.tableView.reloadData()
-        let (a, b) = getIncomes()
-        (executedIncome.text, totalIncome.text) = (String(a), String(b))
-        // Notify to HomeController
-        let nc = NotificationCenter.default
-        nc.post(name: incomeNotification, object: nil)
+        if actionType == "Add" {
+            incomes.append(Income(name: name, amount: Float(amount)!, isExpendable: true, target: Date(), isExecuted: isExecuted))
+            self.tableView.reloadData()
+            let (a, b) = getIncomes()
+            (executedIncome.text, totalIncome.text) = (String(a), String(b))
+            // Notify to HomeController
+            let nc = NotificationCenter.default
+            nc.post(name: incomeNotification, object: nil)
+        }
     }
     
     @objc func reactToIncomeNotification(_ sender: Notification) {
