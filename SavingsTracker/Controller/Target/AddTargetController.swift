@@ -23,9 +23,11 @@ class AddTargetController: UIViewController {
     @IBOutlet weak var currentTarget: UILabel!
     @IBOutlet weak var targetName: UITextField!
     @IBOutlet weak var targetAmount: UITextField!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addButton.layer.cornerRadius = 5
     }
     
     @IBAction func onTargetAdded(_ sender: UIButton) {

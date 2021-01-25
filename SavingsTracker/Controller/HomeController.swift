@@ -36,8 +36,12 @@ class HomeController: UIViewController, UINavigationControllerDelegate {
         
         prepareSavings()
         
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.systemBlue], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .normal)
+        
         targetLabel.text = String(defaultTarget.amount)
         savingsLabel.text = String(defaultSavings.totalAmount)
+        
         let (status, value) = computeMark()
         if status {
             markLabel.text = "On target by"

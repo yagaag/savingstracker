@@ -22,9 +22,11 @@ class AddExpenseController: UIViewController {
     @IBOutlet weak var expenseName: UITextField!
     @IBOutlet weak var expenseAmount: UITextField!
     @IBOutlet weak var executedSwitch: UISwitch!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addButton.layer.cornerRadius = 5
     }
     
     @IBAction func onExpenseAdded(_ sender: UIButton) {

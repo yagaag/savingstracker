@@ -23,9 +23,11 @@ class AddIncomeController: UIViewController {
     @IBOutlet weak var incomeName: UITextField!
     @IBOutlet weak var incomeAmount: UITextField!
     @IBOutlet weak var executedSwitch: UISwitch!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addButton.layer.cornerRadius = 5
     }
     
     @IBAction func onIncomeAdded(_ sender: UIButton) {
