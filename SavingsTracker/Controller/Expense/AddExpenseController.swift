@@ -36,8 +36,8 @@ class AddExpenseController: UIViewController {
             print(expense.amount)
             print(expense.isExecuted)
             if expense.isExecuted {
-                savings.totalAmount = savings.totalAmount - expense.amount
-                nc.post(name: kNotification, object: nil)
+                defaultSavings.totalAmount = defaultSavings.totalAmount - expense.amount
+                //nc.post(name: kNotification, object: nil)
             }
         }
         

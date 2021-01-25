@@ -9,9 +9,6 @@ import UIKit
 
 class IncomeController: UIViewController, UINavigationControllerDelegate, AddIncomeControllerDelegate {
     
-    var incomes: Array<Income> = [Income(name: "Barath", amount: 3000, isExpendable: true, target: Date(), isExecuted: false), Income(name: "Sneha", amount: 10000, isExpendable: true, target: Date(), isExecuted: false)]
-    
-    
     @IBOutlet weak var executedIncome: UILabel!
     @IBOutlet weak var totalIncome: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -19,10 +16,12 @@ class IncomeController: UIViewController, UINavigationControllerDelegate, AddInc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Income"
+        NotificationCenter.default.addObserver(self, selector: #selector(reactToIncomeNotification(_:)), name: incomeNotification, object: nil)
+        
         self.tableView.rowHeight = 70.0
         
-        (executedIncome.text, totalIncome.text) = getIncomes()
+        let (a, b) = getIncomes()
+        (executedIncome.text, totalIncome.text) = (String(a), String(b))
     }
     
     @IBAction func onAddIncome(_ sender: Any) {
@@ -40,22 +39,29 @@ class IncomeController: UIViewController, UINavigationControllerDelegate, AddInc
     func reactToAddIncome(actionType: String, name: String, amount: String, isExecuted: Bool) {
         incomes.append(Income(name: name, amount: Float(amount)!, isExpendable: true, target: Date(), isExecuted: isExecuted))
         self.tableView.reloadData()
-        (executedIncome.text, totalIncome.text) = getIncomes()
+        let (a, b) = getIncomes()
+        (executedIncome.text, totalIncome.text) = (String(a), String(b))
     }
     
-    func getIncomes() -> (String, String) {
-        var t1: Float = 0.0
-        var t2: Float = 0.0
-        for i in 0..<incomes.count {
-            if incomes[i].isExecuted {
-                t1 += incomes[i].amount
-            }
-            else {
-                t2 += incomes[i].amount
-            }
-        }
-        return (String(t1), String(t1+t2))
+    @objc func reactToIncomeNotification(_ sender: Notification) {
+        self.tableView.reloadData()
+        let (a, b) = getIncomes()
+        (executedIncome.text, totalIncome.text) = (String(a), String(b))
     }
+}
+
+func getIncomes() -> (Float , Float) {
+    var t1: Float = 0.0
+    var t2: Float = 0.0
+    for i in 0..<incomes.count {
+        if incomes[i].isExecuted {
+            t1 += incomes[i].amount
+        }
+        else {
+            t2 += incomes[i].amount
+        }
+    }
+    return (t1, t1+t2)
 }
 
 extension IncomeController: UITableViewDataSource, UITableViewDelegate {

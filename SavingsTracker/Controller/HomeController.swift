@@ -7,34 +7,81 @@
 
 import UIKit
 
-var savings = Savings(name: "My Savings", expendableAmount: 200, inexpendableAmount: 400)
+public let expenseNotification = Notification.Name("expenseNotification")
+public let incomeNotification = Notification.Name("incomeNotification")
 
-public let kNotification = Notification.Name("kNotification")
+var defaultTarget = Target(name: "Yagaa", amount: 10000, date: Date())
 
-class HomeController: UIViewController {
-    
-    var expenses: Array<Expense> = [Expense(name: "Car", amount: 1000, target: Date(), isExecuted: false), Expense(name: "Bike", amount: 100, target: Date(), isExecuted: true)]
-    
-    var incomes: Array<Income> = [Income(name: "Barath", amount: 3000, isExpendable: true, target: Date(), isExecuted: false), Income(name: "Sneha", amount: 10000, isExpendable: true, target: Date(), isExecuted: false)]
-    
+var defaultSavings = Savings(name: "My Savings", expendableAmount: 6000, inexpendableAmount: 4000)
+
+var expenses: Array<Expense> = [Expense(name: "Car", amount: 1000, target: Date(), isExecuted: false), Expense(name: "Bike", amount: 2000, target: Date(), isExecuted: false)]
+
+var incomes: Array<Income> = [Income(name: "Barath", amount: 3000, isExpendable: true, target: Date(), isExecuted: false), Income(name: "Sneha", amount: 8000, isExpendable: true, target: Date(), isExecuted: false)]
+
+class HomeController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var markStack: UIStackView!
     @IBOutlet weak var expenseTableView: UITableView!
     @IBOutlet weak var incomeTableView: UITableView!
+    @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var savingsLabel: UILabel!
+    @IBOutlet weak var markLabel: UILabel!
+    @IBOutlet weak var markValue: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(reactToNotification(_:)), name: kNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reactToExpenseNotification(_:)), name: expenseNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reactToIncomeNotification(_:)), name: incomeNotification, object: nil)
+        
+        targetLabel.text = String(defaultTarget.amount)
+        savingsLabel.text = String(defaultSavings.totalAmount)
+        let (status, value) = computeMark()
+        if status {
+            markLabel.text = "On target by"
+            markValue.text = String(value)
+            markStack.customize(backgroundColor: .systemGreen, radiusSize: 12.0)
+        }
+        else {
+            markLabel.text = "Off target by"
+            markValue.text = String(value)
+            markStack.customize(backgroundColor: .systemRed, radiusSize: 12.0)
+        }
         
         self.expenseTableView.rowHeight = 60.0
         self.incomeTableView.rowHeight = 60.0
         incomeTableView.isHidden = true
-        markStack.customize(backgroundColor: .systemGreen, radiusSize: 12.0)
     }
     
-    @objc func reactToNotification(_ sender: Notification) {
-        
-        print("Reacting...")
+    @objc func reactToExpenseNotification(_ sender: Notification) {
+        print("Home expense daw")
+        self.expenseTableView.reloadData()
+        let (status, value) = computeMark()
+        if status {
+            markLabel.text = "On target by"
+            markValue.text = String(value)
+            markStack.customize(backgroundColor: .systemGreen, radiusSize: 12.0)
+        }
+        else {
+            markLabel.text = "Off target by"
+            markValue.text = String(value)
+            markStack.customize(backgroundColor: .systemRed, radiusSize: 12.0)
+        }
+    }
+    
+    @objc func reactToIncomeNotification(_ sender: Notification) {
+        self.incomeTableView.reloadData()
+        let (status, value) = computeMark()
+        if status {
+            markLabel.text = "On target by"
+            markValue.text = String(value)
+            markStack.customize(backgroundColor: .white, radiusSize: 12.0)
+        }
+        else {
+            markLabel.text = "Off target by"
+            markValue.text = String(value)
+            markStack.customize(backgroundColor: .black, radiusSize: 12.0)
+        }
     }
     
     @IBAction func onTableChanged(_ sender: UISegmentedControl) {
@@ -73,13 +120,25 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
 
 extension UIStackView {
     func customize(backgroundColor: UIColor, radiusSize: CGFloat) {
+        print("Entry into customize")
         let subView = UIView(frame: bounds)
         subView.backgroundColor = backgroundColor
         subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         insertSubview(subView, at: 0)
-        print(radiusSize)
         subView.layer.cornerRadius = radiusSize
-        subView.layer.masksToBounds = true        
+        subView.layer.masksToBounds = true
         subView.clipsToBounds = true
+    }
+}
+
+func computeMark() -> (Bool, Float) {
+    let (executedExpenseVal, _) = getExpenses()
+    let (executedIncomeVal, _) = getIncomes()
+    let value = defaultSavings.totalAmount + executedIncomeVal - defaultTarget.amount - executedExpenseVal
+    if value < 0 {
+        return (false, -value)
+    }
+    else {
+        return (true, value)
     }
 }

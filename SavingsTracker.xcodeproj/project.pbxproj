@@ -12,6 +12,7 @@
 		620FB23A25AE0DD600DBA1EE /* ExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620FB23925AE0DD600DBA1EE /* ExpenseController.swift */; };
 		623A382225BBE91A005F39E4 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623A382125BBE91A005F39E4 /* ExpenseCell.swift */; };
 		623A382A25BCA217005F39E4 /* IncomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623A382925BCA217005F39E4 /* IncomeCell.swift */; };
+		62CEA9C525BF4E380036BB98 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CEA9C425BF4E380036BB98 /* TabBarController.swift */; };
 		62DAD0C325A8E65D0052214E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0C225A8E65D0052214E /* AppDelegate.swift */; };
 		62DAD0C525A8E65D0052214E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0C425A8E65D0052214E /* SceneDelegate.swift */; };
 		62DAD0C725A8E65D0052214E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD0C625A8E65D0052214E /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		620FB23925AE0DD600DBA1EE /* ExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseController.swift; sourceTree = "<group>"; };
 		623A382125BBE91A005F39E4 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExpenseCell.swift; path = SavingsTracker/Controller/Expense/ExpenseCell.swift; sourceTree = SOURCE_ROOT; };
 		623A382925BCA217005F39E4 /* IncomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeCell.swift; sourceTree = "<group>"; };
+		62CEA9C425BF4E380036BB98 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		62DAD0BF25A8E65D0052214E /* SavingsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SavingsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DAD0C225A8E65D0052214E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62DAD0C425A8E65D0052214E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				620FB23E25AE0DDC00DBA1EE /* Income */,
 				62DAD10F25A8EE5E0052214E /* SavingsController.swift */,
 				62DAD11425A8EE6E0052214E /* HomeController.swift */,
+				62CEA9C425BF4E380036BB98 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				620FB23A25AE0DD600DBA1EE /* ExpenseController.swift in Sources */,
 				620FB23525AE0DCB00DBA1EE /* IncomeController.swift in Sources */,
 				62DAD0FE25A8E7200052214E /* Expense.swift in Sources */,
+				62CEA9C525BF4E380036BB98 /* TabBarController.swift in Sources */,
 				62DAD11A25A8EE790052214E /* AddExpenseController.swift in Sources */,
 				623A382225BBE91A005F39E4 /* ExpenseCell.swift in Sources */,
 				62DAD0FD25A8E7200052214E /* Target.swift in Sources */,

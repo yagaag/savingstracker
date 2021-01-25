@@ -11,9 +11,7 @@ class TargetController: UIViewController, UINavigationControllerDelegate, AddTar
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Target"
     }
-    
     
     @IBAction func onAddTarget(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "addTarget", sender: self)
@@ -29,6 +27,7 @@ class TargetController: UIViewController, UINavigationControllerDelegate, AddTar
     
     func reactToAddTarget(actionType: String, name: String, amount: String) {
         print("\(actionType), \(name), \(amount)")
+        
     }
     
 }

@@ -9,19 +9,18 @@ import UIKit
 
 class ExpenseController: UIViewController, UINavigationControllerDelegate, AddExpenseControllerDelegate {
     
-    var expenses: Array<Expense> = [Expense(name: "Car", amount: 1000, target: Date(), isExecuted: false), Expense(name: "Bike", amount: 100, target: Date(), isExecuted: true)]
-    
     @IBOutlet weak var executedExpense: UILabel!
     @IBOutlet weak var totalExpense: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Expense"
+        NotificationCenter.default.addObserver(self, selector: #selector(reactToExpenseNotification(_:)), name: expenseNotification, object: nil)
+        
         self.tableView.rowHeight = 70.0
         
-        (executedExpense.text, totalExpense.text) = getExpenses()
-        
+        let (a, b) = getExpenses()
+        (executedExpense.text, totalExpense.text) = (String(a), String(b))
     }
 
     @IBAction func onAddExpense(_ sender: UIBarButtonItem) {
@@ -39,23 +38,29 @@ class ExpenseController: UIViewController, UINavigationControllerDelegate, AddEx
     func reactToAddExpense(actionType: String, name: String, amount: String, isExecuted: Bool) {
         expenses.append(Expense(name: name, amount: Float(amount)!, target: Date(), isExecuted: isExecuted))
         self.tableView.reloadData()
-        (executedExpense.text, totalExpense.text) = getExpenses()
+        let (a, b) = getExpenses()
+        (executedExpense.text, totalExpense.text) = (String(a), String(b))
     }
     
-    func getExpenses() -> (String, String) {
-        var t1: Float = 0.0
-        var t2: Float = 0.0
-        for i in 0..<expenses.count {
-            if expenses[i].isExecuted {
-                t1 += expenses[i].amount
-            }
-            else {
-                t2 += expenses[i].amount
-            }
+    @objc func reactToExpenseNotification(_ sender: Notification) {
+        self.tableView.reloadData()
+        let (a, b) = getExpenses()
+        (executedExpense.text, totalExpense.text) = (String(a), String(b))
+    }
+}
+
+func getExpenses() -> (Float, Float) {
+    var t1: Float = 0.0
+    var t2: Float = 0.0
+    for i in 0..<expenses.count {
+        if expenses[i].isExecuted {
+            t1 += expenses[i].amount
         }
-        return (String(t1), String(t1+t2))
+        else {
+            t2 += expenses[i].amount
+        }
     }
-    
+    return (t1, t1+t2)
 }
 
 extension ExpenseController: UITableViewDataSource, UITableViewDelegate {

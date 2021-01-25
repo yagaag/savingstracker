@@ -37,8 +37,8 @@ class AddIncomeController: UIViewController {
             print(income.amount)
             print(income.isExecuted)
             if income.isExecuted {
-                savings.totalAmount = savings.totalAmount + income.amount
-                nc.post(name: kNotification, object: nil)
+                defaultSavings.totalAmount = defaultSavings.totalAmount + income.amount
+                //nc.post(name: kNotification, object: nil)
             }
             
             if let delegate = delegate {

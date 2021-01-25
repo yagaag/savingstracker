@@ -16,21 +16,13 @@ class IncomeCell: UITableViewCell {
     func setIncome(income: Income) {
         incomeName.text = income.name
         incomeAmount.text = String(income.amount)
-        executeSwitch.setOn(income.isExecuted, animated: false)
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        executeSwitch.setOn(income.isExecuted, animated: true)
     }
     
     @IBAction func onExecuted(_ sender: UISwitch) {
-        
+        incomes[self.indexPath!.row].isExecuted = sender.isOn
+        // Notify to HomeController and IncomeController
+        let nc = NotificationCenter.default
+        nc.post(name: incomeNotification, object: nil)
     }
 }

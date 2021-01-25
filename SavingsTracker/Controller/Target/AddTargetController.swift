@@ -35,7 +35,7 @@ class AddTargetController: UIViewController {
         if let amount = targetAmount.text {
             SavingsTracker.target = Target(name: targetName.text!, amount: Float(amount)!, date: Date())
             print(SavingsTracker.target.amount)
-            nc.post(name: kNotification, object: nil)
+            //nc.post(name: kNotification, object: nil)
         }
         if let delegate = delegate {
             delegate.reactToAddTarget(actionType: "Add", name: targetName.text!, amount: targetAmount.text!)
