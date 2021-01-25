@@ -39,13 +39,15 @@ class HomeController: UIViewController, UINavigationControllerDelegate {
         let (status, value) = computeMark()
         if status {
             markLabel.text = "On target by"
+            markLabel.textColor = .systemGreen
             markValue.text = String(value)
-            markStack.customize(backgroundColor: .systemGreen, radiusSize: 12.0)
+            markValue.textColor = .systemGreen
         }
         else {
             markLabel.text = "Off target by"
+            markLabel.textColor = .systemRed
             markValue.text = String(value)
-            markStack.customize(backgroundColor: .systemRed, radiusSize: 12.0)
+            markValue.textColor = .systemRed
         }
         
         self.expenseTableView.rowHeight = 60.0
@@ -54,18 +56,19 @@ class HomeController: UIViewController, UINavigationControllerDelegate {
     }
     
     @objc func reactToExpenseNotification(_ sender: Notification) {
-        print("Home expense daw")
         self.expenseTableView.reloadData()
         let (status, value) = computeMark()
         if status {
             markLabel.text = "On target by"
+            markLabel.textColor = .systemGreen
             markValue.text = String(value)
-            markStack.customize(backgroundColor: .systemGreen, radiusSize: 12.0)
+            markValue.textColor = .systemGreen
         }
         else {
             markLabel.text = "Off target by"
+            markLabel.textColor = .systemRed
             markValue.text = String(value)
-            markStack.customize(backgroundColor: .systemRed, radiusSize: 12.0)
+            markValue.textColor = .systemRed
         }
     }
     
@@ -74,13 +77,17 @@ class HomeController: UIViewController, UINavigationControllerDelegate {
         let (status, value) = computeMark()
         if status {
             markLabel.text = "On target by"
+            markLabel.textColor = .systemGreen
             markValue.text = String(value)
-            markStack.customize(backgroundColor: .white, radiusSize: 12.0)
+            markValue.textColor = .systemGreen
+            //markStack.customize(backgroundColor: .white, radiusSize: 12.0)
         }
         else {
             markLabel.text = "Off target by"
+            markLabel.textColor = .systemRed
             markValue.text = String(value)
-            markStack.customize(backgroundColor: .black, radiusSize: 12.0)
+            markValue.textColor = .systemRed
+            //markStack.customize(backgroundColor: .white, radiusSize: 12.0)
         }
     }
     
@@ -118,18 +125,17 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension UIStackView {
-    func customize(backgroundColor: UIColor, radiusSize: CGFloat) {
-        print("Entry into customize")
-        let subView = UIView(frame: bounds)
-        subView.backgroundColor = backgroundColor
-        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        insertSubview(subView, at: 0)
-        subView.layer.cornerRadius = radiusSize
-        subView.layer.masksToBounds = true
-        subView.clipsToBounds = true
-    }
-}
+//extension UIStackView {
+//    func customize(backgroundColor: UIColor, radiusSize: CGFloat) {
+//        let subView = UIView(frame: bounds)
+//        subView.backgroundColor = backgroundColor
+//        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        insertSubview(subView, at: 0)
+//        subView.layer.cornerRadius = radiusSize
+//        subView.layer.masksToBounds = true
+//        subView.clipsToBounds = true
+//    }
+//}
 
 func computeMark() -> (Bool, Float) {
     let (executedExpenseVal, _) = getExpenses()
