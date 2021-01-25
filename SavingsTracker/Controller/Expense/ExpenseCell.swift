@@ -21,6 +21,14 @@ class ExpenseCell: UITableViewCell {
     
     @IBAction func onExecuted(_ sender: UISwitch) {
         expenses[self.indexPath!.row].isExecuted = sender.isOn
+        
+        if sender.isOn {
+            defaultSavings.totalAmount -= expenses[self.indexPath!.row].amount
+        }
+        else {
+            defaultSavings.totalAmount += expenses[self.indexPath!.row].amount
+        }
+        
         // Notify to HomeController and ExpenseController
         let nc = NotificationCenter.default
         nc.post(name: expenseNotification, object: nil)

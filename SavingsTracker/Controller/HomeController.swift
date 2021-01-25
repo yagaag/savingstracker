@@ -34,6 +34,8 @@ class HomeController: UIViewController, UINavigationControllerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(reactToExpenseNotification(_:)), name: expenseNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reactToIncomeNotification(_:)), name: incomeNotification, object: nil)
         
+        prepareSavings()
+        
         targetLabel.text = String(defaultTarget.amount)
         savingsLabel.text = String(defaultSavings.totalAmount)
         let (status, value) = computeMark()
@@ -138,13 +140,28 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
 //}
 
 func computeMark() -> (Bool, Float) {
-    let (executedExpenseVal, _) = getExpenses()
-    let (executedIncomeVal, _) = getIncomes()
-    let value = defaultSavings.totalAmount + executedIncomeVal - defaultTarget.amount - executedExpenseVal
+    print("Computing...")
+    let value = defaultSavings.totalAmount - defaultTarget.amount
     if value < 0 {
         return (false, -value)
     }
     else {
         return (true, value)
     }
+}
+
+func prepareSavings() {
+    var i0: Float = 0.0
+    var e0: Float = 0.0
+    for i in 0..<incomes.count {
+        if incomes[i].isExecuted {
+            i0 += incomes[i].amount
+        }
+    }
+    for i in 0..<expenses.count {
+        if expenses[i].isExecuted {
+            e0 += expenses[i].amount
+        }
+    }
+    defaultSavings.totalAmount = defaultSavings.totalAmount + i0 - e0
 }

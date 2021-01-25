@@ -41,6 +41,9 @@ class IncomeController: UIViewController, UINavigationControllerDelegate, AddInc
         self.tableView.reloadData()
         let (a, b) = getIncomes()
         (executedIncome.text, totalIncome.text) = (String(a), String(b))
+        // Notify to HomeController
+        let nc = NotificationCenter.default
+        nc.post(name: incomeNotification, object: nil)
     }
     
     @objc func reactToIncomeNotification(_ sender: Notification) {

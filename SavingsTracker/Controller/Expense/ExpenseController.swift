@@ -40,6 +40,9 @@ class ExpenseController: UIViewController, UINavigationControllerDelegate, AddEx
         self.tableView.reloadData()
         let (a, b) = getExpenses()
         (executedExpense.text, totalExpense.text) = (String(a), String(b))
+        // Notify to HomeController
+        let nc = NotificationCenter.default
+        nc.post(name: expenseNotification, object: nil)
     }
     
     @objc func reactToExpenseNotification(_ sender: Notification) {
