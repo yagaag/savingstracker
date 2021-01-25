@@ -77,4 +77,15 @@ extension IncomeController: UITableViewDataSource, UITableViewDelegate {
         cell.setIncome(income: income)
         return cell
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if incomes[indexPath.row].isExecuted {
+                defaultSavings.totalAmount -= incomes[indexPath.row].amount
+            }
+            incomes.remove(at: indexPath.row)
+            // Notify to HomeController and ExpenseController
+            let nc = NotificationCenter.default
+            nc.post(name: incomeNotification, object: nil)
+        }
+    }
 }

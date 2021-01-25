@@ -76,4 +76,15 @@ extension ExpenseController: UITableViewDataSource, UITableViewDelegate {
         cell.setExpense(expense: expense)
         return cell
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if expenses[indexPath.row].isExecuted {
+                defaultSavings.totalAmount += expenses[indexPath.row].amount
+            }
+            expenses.remove(at: indexPath.row)
+            // Notify to HomeController and ExpenseController
+            let nc = NotificationCenter.default
+            nc.post(name: expenseNotification, object: nil)
+        }
+    }
 }

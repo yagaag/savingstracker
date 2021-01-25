@@ -125,6 +125,28 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if tableView == self.expenseTableView {
+                if expenses[indexPath.row].isExecuted {
+                    defaultSavings.totalAmount += expenses[indexPath.row].amount
+                }
+                expenses.remove(at: indexPath.row)
+                // Notify to HomeController and ExpenseController
+                let nc = NotificationCenter.default
+                nc.post(name: expenseNotification, object: nil)
+            }
+            else {
+                if incomes[indexPath.row].isExecuted {
+                    defaultSavings.totalAmount -= incomes[indexPath.row].amount
+                }
+                incomes.remove(at: indexPath.row)
+                // Notify to HomeController and ExpenseController
+                let nc = NotificationCenter.default
+                nc.post(name: incomeNotification, object: nil)
+            }
+        }
+    }
 }
 
 //extension UIStackView {
@@ -140,7 +162,6 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
 //}
 
 func computeMark() -> (Bool, Float) {
-    print("Computing...")
     let value = defaultSavings.totalAmount - defaultTarget.amount
     if value < 0 {
         return (false, -value)
