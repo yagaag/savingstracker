@@ -35,10 +35,8 @@ class AddExpenseController: UIViewController {
         expenseAmount.endEditing(true)
         if let amount = expenseAmount.text {
             expense = Expense(name: expenseName.text!, amount: Float(amount)!, target: Date(), isExecuted: executedSwitch.isOn)
-            print(expense.amount)
-            print(expense.isExecuted)
             if expense.isExecuted {
-                defaultSavings.totalAmount = defaultSavings.totalAmount - expense.amount
+                savingsList[savingsID].totalAmount = savingsList[savingsID].totalAmount - expense.amount
                 //nc.post(name: kNotification, object: nil)
             }
         }

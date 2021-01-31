@@ -31,3 +31,9 @@ class Expense {
         return (self.amount, self.target)
     }
 }
+
+var expenses: Array<Expense> = [Expense(name: "Car", amount: 1000, target: Date(), isExecuted: false), Expense(name: "Bike", amount: 2000, target: Date(), isExecuted: false)]
+var expenses1: Array<Expense> = [Expense(name: "Car", amount: 1000, target: Date(), isExecuted: false), Expense(name: "Bike", amount: 2000, target: Date(), isExecuted: false)]
+var expenses2: Array<Expense> = [Expense(name: "Car", amount: 1000, target: Date(), isExecuted: false), Expense(name: "Bike", amount: 2000, target: Date(), isExecuted: false)]
+
+var expenseList: Array<Array<Expense>> = [expenses, expenses1, expenses2]

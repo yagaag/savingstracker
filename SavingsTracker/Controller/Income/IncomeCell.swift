@@ -20,13 +20,13 @@ class IncomeCell: UITableViewCell {
     }
     
     @IBAction func onExecuted(_ sender: UISwitch) {
-        incomes[self.indexPath!.row].isExecuted = sender.isOn
+        incomeList[savingsID][self.indexPath!.row].isExecuted = sender.isOn
         
         if sender.isOn {
-            defaultSavings.totalAmount += incomes[self.indexPath!.row].amount
+            savingsList[savingsID].totalAmount += incomes[self.indexPath!.row].amount
         }
         else {
-            defaultSavings.totalAmount -= incomes[self.indexPath!.row].amount
+            savingsList[savingsID].totalAmount -= incomes[self.indexPath!.row].amount
         }
         
         // Notify to HomeController and IncomeController

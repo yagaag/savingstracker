@@ -55,3 +55,9 @@ class Income {
         return (-self.amount, self.target)
     }
 }
+
+var incomes: Array<Income> = [Income(name: "Barath", amount: 3000, isExpendable: true, target: Date(), isExecuted: false), Income(name: "Sneha", amount: 2000, isExpendable: true, target: Date(), isExecuted: false)]
+var incomes1: Array<Income> = [Income(name: "Barath", amount: 3000, isExpendable: true, target: Date(), isExecuted: false), Income(name: "Sneha", amount: 2000, isExpendable: true, target: Date(), isExecuted: false)]
+var incomes2: Array<Income> = [Income(name: "Barath", amount: 3000, isExpendable: true, target: Date(), isExecuted: false), Income(name: "Sneha", amount: 2000, isExpendable: true, target: Date(), isExecuted: false)]
+
+var incomeList: Array<Array<Income>> = [incomes, incomes1, incomes2]
