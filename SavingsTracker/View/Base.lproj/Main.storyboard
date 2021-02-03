@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dUo-Tb-f3o">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,13 +14,13 @@
             <objects>
                 <viewController id="CyA-Ag-aGd" customClass="SavingsController" customModule="SavingsTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HRn-IW-NAc" customClass="SavingsController">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="OfK-vi-uJP"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="bg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Savings" id="Vpd-KY-dEB">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="TFu-LG-cWX"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TFu-LG-cWX"/>
                     </navigationItem>
                     <connections>
                         <segue destination="c2V-vD-CMf" kind="presentation" id="sZH-WA-INm"/>
@@ -35,37 +35,52 @@
             <objects>
                 <viewController id="8sb-HK-trz" customClass="AddTargetController" customModule="SavingsTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4T4-Er-Rpp" customClass="TargetController">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="geP-W6-SLB">
-                                <rect key="frame" x="50" y="80" width="314" height="284"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="geP-W6-SLB">
+                                <rect key="frame" x="50" y="80" width="314" height="344"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Target" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDO-WU-67l">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Target" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDO-WU-67l">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" name="AccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="IW2-Ph-PLf">
-                                        <rect key="frame" x="0.0" y="84" width="314" height="108"/>
+                                        <rect key="frame" x="0.0" y="74" width="314" height="108"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FbO-DD-eIJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" name="textfield"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9qY-2l-Lmj">
                                                 <rect key="frame" x="0.0" y="74" width="314" height="34"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" name="textfield"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="rLg-zJ-ZcT">
+                                        <rect key="frame" x="0.0" y="232" width="314" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Savings:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LC4-bB-zVC">
+                                                <rect key="frame" x="0.0" y="0.0" width="121" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HJ-Kk-XUp">
+                                                <rect key="frame" x="161" y="0.0" width="153" height="30"/>
+                                                <state key="normal" title="Select &gt;"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-Ov-G1u">
-                                        <rect key="frame" x="0.0" y="252" width="314" height="32"/>
+                                        <rect key="frame" x="0.0" y="312" width="314" height="32"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="Mgm-Hg-dNI" userLabel="height = 32"/>
@@ -89,7 +104,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zXm-oA-uzg"/>
-                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" name="segue"/>
                         <constraints>
                             <constraint firstItem="geP-W6-SLB" firstAttribute="leading" secondItem="zXm-oA-uzg" secondAttribute="leading" constant="50" id="bzA-db-Vcm"/>
                             <constraint firstItem="zXm-oA-uzg" firstAttribute="trailing" secondItem="geP-W6-SLB" secondAttribute="trailing" constant="50" id="jPP-z2-Fvp"/>
@@ -113,10 +128,66 @@
             <objects>
                 <viewController id="c2V-vD-CMf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pox-TC-DVk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Al9-8O-Zzh">
+                                <rect key="frame" x="50" y="80" width="314" height="264"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Savings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rh-JG-g0r">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <color key="textColor" name="AccentColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="UnJ-IE-fNj">
+                                        <rect key="frame" x="0.0" y="74" width="314" height="108"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dVI-qx-sQM">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                                <color key="backgroundColor" name="textfield"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TiW-Ip-q7c">
+                                                <rect key="frame" x="0.0" y="74" width="314" height="34"/>
+                                                <color key="backgroundColor" name="textfield"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oe-tD-I2p">
+                                        <rect key="frame" x="0.0" y="232" width="314" height="32"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="ahV-0S-UcW" userLabel="height = 32"/>
+                                        </constraints>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTargetAdded:" destination="8sb-HK-trz" eventType="touchUpInside" id="UVo-ds-kvK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGD-Yn-qLk">
+                                <rect key="frame" x="20" y="20" width="21" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="arrow.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="onBackPressed:" destination="8sb-HK-trz" eventType="touchUpInside" id="bXb-Cc-RZp"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FPT-IE-3SI"/>
-                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" name="segue"/>
+                        <constraints>
+                            <constraint firstItem="FPT-IE-3SI" firstAttribute="trailing" secondItem="Al9-8O-Zzh" secondAttribute="trailing" constant="50" id="4if-SB-YAk"/>
+                            <constraint firstItem="Al9-8O-Zzh" firstAttribute="top" secondItem="FPT-IE-3SI" secondAttribute="top" constant="80" id="UUU-4S-9MW"/>
+                            <constraint firstItem="Al9-8O-Zzh" firstAttribute="leading" secondItem="FPT-IE-3SI" secondAttribute="leading" constant="50" id="ufm-6e-KR3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlJ-A4-p4j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -128,13 +199,13 @@
             <objects>
                 <viewController id="rY5-Al-GRZ" customClass="TargetController" customModule="SavingsTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M2J-Fc-KTx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="2py-pQ-cTr"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="bg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Target" id="GWK-Vs-oVu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="KPf-NS-ifr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KPf-NS-ifr">
                             <connections>
                                 <action selector="onAddTarget:" destination="rY5-Al-GRZ" id="9fa-Ms-ORS"/>
                             </connections>
@@ -156,7 +227,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="barTintColor" name="tertiary"/>
                     </tabBar>
                     <connections>
                         <segue destination="eVC-LQ-6CV" kind="relationship" relationship="viewControllers" id="E1g-Gj-1FA"/>
@@ -175,7 +246,7 @@
             <objects>
                 <viewController id="2ws-2o-wWV" customClass="IncomeController" customModule="SavingsTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aIg-yA-CVI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Gs-MA-bkG">
@@ -212,6 +283,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="bg"/>
                                         <connections>
                                             <outlet property="executeSwitch" destination="yu9-31-GfV" id="IgN-62-kKg"/>
                                             <outlet property="incomeAmount" destination="f2m-hW-eKL" id="Xwp-CJ-fLA"/>
@@ -310,7 +382,7 @@
             <objects>
                 <viewController id="Ole-gF-8fs" customClass="ExpenseController" customModule="SavingsTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aRr-DC-azb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="awu-dT-WZ4">
@@ -388,6 +460,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="bg"/>
                                         <connections>
                                             <outlet property="amountLabel" destination="ezk-ex-jCQ" id="F4k-m6-wRl"/>
                                             <outlet property="executeSwitch" destination="Pkk-Fy-Nwe" id="FRa-Tw-aVs"/>
@@ -431,6 +504,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="executedExpense" destination="1ea-af-4QC" id="Z34-hE-2ZO"/>
+                        <outlet property="leftBarButton" destination="Jtp-9N-WQR" id="YwU-Iz-hnF"/>
                         <outlet property="tableView" destination="tgc-bW-khM" id="fG9-n6-ZFK"/>
                         <outlet property="totalExpense" destination="sZQ-Sj-IrT" id="caK-d8-6mr"/>
                         <segue destination="8uL-k8-4Y8" kind="presentation" identifier="addExpense" id="xlz-gA-O3Y"/>
@@ -445,11 +519,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Home Controller" customClass="HomeController" customModule="SavingsTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fCC-nY-hGB" customClass="HomeController">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Or5-HP-Jiz" userLabel="AmountStack">
-                                <rect key="frame" x="0.0" y="88" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="At0-JG-61c" userLabel="TargetView">
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="100"/>
@@ -515,7 +589,7 @@
                                 </constraints>
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YmO-sr-oIC">
-                                <rect key="frame" x="60" y="301" width="294" height="32"/>
+                                <rect key="frame" x="60" y="213" width="294" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <segments>
                                     <segment title="Expenses"/>
@@ -528,8 +602,9 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NoK-m6-INV" userLabel="ExpenseView">
-                                <rect key="frame" x="0.0" y="340" width="414" height="473"/>
+                                <rect key="frame" x="0.0" y="252" width="414" height="473"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" name="textfield"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeExpenseCell" rowHeight="60" id="0t8-gI-MqH" customClass="ExpenseCell" customModule="SavingsTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
@@ -561,6 +636,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="bg"/>
                                         <connections>
                                             <outlet property="amountLabel" destination="16z-0Q-EEX" id="IsZ-Mq-x1R"/>
                                             <outlet property="executeSwitch" destination="W6w-VX-WF8" id="SiZ-sH-zMV"/>
@@ -574,7 +650,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oGj-D5-KaP" userLabel="IncomeView">
-                                <rect key="frame" x="0.0" y="340" width="414" height="473"/>
+                                <rect key="frame" x="0.0" y="252" width="414" height="473"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeIncomeCell" rowHeight="60" id="H02-qi-N1r" customClass="IncomeCell" customModule="SavingsTracker" customModuleProvider="target">
@@ -607,6 +683,7 @@
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="bg"/>
                                         <connections>
                                             <outlet property="executeSwitch" destination="dBP-yW-9sL" id="YJy-Iz-gVX"/>
                                             <outlet property="incomeAmount" destination="mDz-w7-DnV" id="aKA-cc-Kdu"/>
@@ -620,7 +697,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="N7V-Lc-Lxa" userLabel="MarkStack">
-                                <rect key="frame" x="20" y="203" width="374" height="80"/>
+                                <rect key="frame" x="20" y="115" width="374" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On target by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wg-U2-wH3">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="38"/>
@@ -641,7 +718,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pfc-MF-c2m"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="bg"/>
                         <constraints>
                             <constraint firstItem="pfc-MF-c2m" firstAttribute="trailing" secondItem="YmO-sr-oIC" secondAttribute="trailing" constant="60" id="12x-q8-ZtH"/>
                             <constraint firstItem="NoK-m6-INV" firstAttribute="leading" secondItem="pfc-MF-c2m" secondAttribute="leading" id="BSF-iI-Gik"/>
@@ -684,7 +761,7 @@
             <objects>
                 <viewController id="8uL-k8-4Y8" customClass="AddExpenseController" customModule="SavingsTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FXr-Tn-Gs3" customClass="ExpenseController">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="kaO-Ir-dEy">
@@ -701,13 +778,13 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="a9x-Td-jNH">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" name="textfield"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="16f-BF-ErF">
                                                 <rect key="frame" x="0.0" y="72" width="314" height="34"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" name="textfield"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -751,7 +828,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bsb-EU-SWR"/>
-                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" name="segue"/>
                         <constraints>
                             <constraint firstItem="kaO-Ir-dEy" firstAttribute="top" secondItem="Bsb-EU-SWR" secondAttribute="top" constant="80" id="BSY-QZ-C6G"/>
                             <constraint firstItem="kaO-Ir-dEy" firstAttribute="leading" secondItem="Bsb-EU-SWR" secondAttribute="leading" constant="50" id="MEW-XE-x6E"/>
@@ -775,7 +852,7 @@
             <objects>
                 <viewController id="85N-dj-wXI" customClass="AddIncomeController" customModule="SavingsTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i27-4A-cAi" customClass="IncomeController">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="FiC-TB-SwD">
@@ -792,13 +869,13 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jtA-1i-abh">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="35"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" name="textfield"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G8Q-wu-EHH">
                                                 <rect key="frame" x="0.0" y="73" width="314" height="34"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" name="textfield"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -849,7 +926,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7MY-jo-VC3"/>
-                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" name="segue"/>
                         <constraints>
                             <constraint firstItem="7MY-jo-VC3" firstAttribute="trailing" secondItem="FiC-TB-SwD" secondAttribute="trailing" constant="50" id="UW5-P0-Thl"/>
                             <constraint firstItem="FiC-TB-SwD" firstAttribute="top" secondItem="7MY-jo-VC3" secondAttribute="top" constant="80" id="aAs-05-wAR"/>
@@ -877,7 +954,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="cBd-m1-urx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="barTintColor" name="tertiary"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" systemColor="systemBlueColor"/>
                         </textAttributes>
@@ -900,7 +977,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="R44-6E-Yvu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="barTintColor" name="tertiary"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" systemColor="systemBlueColor"/>
                         </textAttributes>
@@ -923,7 +1000,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4fV-Gc-Ybe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="barTintColor" name="tertiary"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" systemColor="systemBlueColor"/>
                         </textAttributes>
@@ -943,10 +1020,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gn6-fi-JJx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Savings" image="dollarsign.circle" catalog="system" id="aj3-ij-2eB"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mPW-YY-OjZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="mPW-YY-OjZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="barTintColor" name="tertiary"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" systemColor="systemBlueColor"/>
                         </textAttributes>
@@ -966,10 +1043,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xQh-0J-umr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house.circle" catalog="system" id="tE9-L9-3Bc"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bTc-EP-x6Y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bTc-EP-x6Y">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="barTintColor" name="tertiary"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" systemColor="systemBlueColor"/>
                         </textAttributes>
@@ -996,14 +1073,23 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="bg">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="segue">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tertiary">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textfield">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

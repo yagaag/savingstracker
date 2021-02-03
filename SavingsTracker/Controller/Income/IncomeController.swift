@@ -39,10 +39,6 @@ class IncomeController: UIViewController, UINavigationControllerDelegate, AddInc
                 savingsID = i
                 let nc = NotificationCenter.default
                 nc.post(name: savingsNotification, object: nil)
-//                self.tableView.reloadData()
-//                let (a, b) = getIncomes(id: savingsID)
-//                (self.executedIncome.text, self.totalIncome.text) = (String(a), String(b))
-//                self.navigationItem.title = savingsNameList[savingsID]
             }
             alert.addAction(action)
         }
@@ -102,13 +98,14 @@ extension IncomeController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let income = incomeList[savingsID][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "IncomeCell") as! IncomeCell
+        cell.selectionStyle = .none
         cell.setIncome(income: income)
         return cell
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if incomeList[savingsID][indexPath.row].isExecuted {
-                savingsList[savingsID].totalAmount -= incomeList[savingsID][indexPath.row].amount
+                savingsList[savingsID].amount -= incomeList[savingsID][indexPath.row].amount
             }
             incomeList[savingsID].remove(at: indexPath.row)
             // Notify to HomeController

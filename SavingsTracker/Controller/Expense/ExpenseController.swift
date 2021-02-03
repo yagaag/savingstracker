@@ -12,11 +12,15 @@ class ExpenseController: UIViewController, UINavigationControllerDelegate, AddEx
     @IBOutlet weak var executedExpense: UILabel!
     @IBOutlet weak var totalExpense: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var leftBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(reactToExpenseNotification(_:)), name: expenseNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reactToSavingsNotification(_:)), name: savingsNotification, object: nil)
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        self.view.addGestureRecognizer(longPressRecognizer)
         
         self.navigationItem.title = savingsNameList[savingsID]
         
@@ -32,6 +36,8 @@ class ExpenseController: UIViewController, UINavigationControllerDelegate, AddEx
     
     @IBAction func onSavingsPressed(_ sender: UIBarButtonItem) {
         
+        print(sender.image)
+        
         let alert = UIAlertController(title: "Select Savings", message: "", preferredStyle: .alert)
         
         for i in 0..<savingsNameList.count {
@@ -39,10 +45,6 @@ class ExpenseController: UIViewController, UINavigationControllerDelegate, AddEx
                 savingsID = i
                 let nc = NotificationCenter.default
                 nc.post(name: savingsNotification, object: nil)
-//                self.tableView.reloadData()
-//                let (a, b) = getExpenses(id: savingsID)
-//                (self.executedExpense.text, self.totalExpense.text) = (String(a), String(b))
-//                self.navigationItem.title = savingsNameList[savingsID]
             }
             alert.addAction(action)
         }
@@ -64,6 +66,22 @@ class ExpenseController: UIViewController, UINavigationControllerDelegate, AddEx
             // Notify to HomeController and self
             let nc = NotificationCenter.default
             nc.post(name: expenseNotification, object: nil)
+        }
+    }
+    
+    @objc func handleLongPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        
+        print("heylo")
+
+        if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
+
+            let touchPoint = longPressGestureRecognizer.location(in: self.view)
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+
+                print("reached")
+                tableView.cellForRow(at: indexPath)?.backgroundColor = .systemBlue
+                // your code here, get the row for the indexPath or do whatever you want
+            }
         }
     }
     
@@ -102,13 +120,14 @@ extension ExpenseController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let expense = expenseList[savingsID][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExpenseCell") as! ExpenseCell
+        cell.selectionStyle = .blue
         cell.setExpense(expense: expense)
         return cell
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if expenseList[savingsID][indexPath.row].isExecuted {
-                savingsList[savingsID].totalAmount += expenseList[savingsID][indexPath.row].amount
+                savingsList[savingsID].amount += expenseList[savingsID][indexPath.row].amount
             }
             expenseList[savingsID].remove(at: indexPath.row)
             // Notify to HomeController

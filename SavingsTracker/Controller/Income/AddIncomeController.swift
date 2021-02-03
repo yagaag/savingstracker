@@ -37,7 +37,7 @@ class AddIncomeController: UIViewController {
         if let amount = incomeAmount.text {
             income = Income(name: incomeName.text!, amount: Float(amount)!, isExpendable: false, target: Date(), isExecuted: executedSwitch.isOn)
             if income.isExecuted {
-                savingsList[savingsID].totalAmount = savingsList[savingsID].totalAmount + income.amount
+                savingsList[savingsID].amount = savingsList[savingsID].amount + income.amount
                 //nc.post(name: kNotification, object: nil)
             }
             

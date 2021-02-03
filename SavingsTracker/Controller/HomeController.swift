@@ -13,14 +13,6 @@ public let savingsNotification = Notification.Name("savingsNotification")
 
 var defaultTarget = Target(name: "Yagaa", amount: 10000, date: Date())
 
-//var defaultSavings = Savings(name: "My Savings", expendableAmount: 6000, inexpendableAmount: 4000)
-
-var savings0 = Savings(name: "My Savings", expendableAmount: 6000, inexpendableAmount: 4000)
-var savings1 = Savings(name: "My Savings", expendableAmount: 6000, inexpendableAmount: 4000)
-var savings2 = Savings(name: "My Savings", expendableAmount: 6000, inexpendableAmount: 4000)
-
-var savingsList: Array<Savings> = [savings0, savings1, savings2]
-
 var savingsNameList = ["FD", "Zerodha", "Account"]
 
 var savingsID = 0
@@ -52,7 +44,7 @@ class HomeController: UIViewController, UINavigationControllerDelegate {
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .normal)
         
         targetLabel.text = String(defaultTarget.amount)
-        savingsLabel.text = String(savingsList[savingsID].totalAmount)
+        savingsLabel.text = String(savingsList[savingsID].amount)
         
         savingsButton.setTitle("\(savingsNameList[savingsID]) >", for: .normal)
         
@@ -107,7 +99,7 @@ class HomeController: UIViewController, UINavigationControllerDelegate {
     
     @objc func reactToSavingsNotification(_ sender: Notification) {
         self.editMark()
-        self.savingsLabel.text = String(savingsList[savingsID].totalAmount)
+        self.savingsLabel.text = String(savingsList[savingsID].amount)
         self.savingsButton.setTitle("\(savingsNameList[savingsID]) >", for: .normal)
         
         self.expenseTableView.reloadData()
@@ -152,12 +144,14 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
         if tableView == self.expenseTableView {
             let expense = expenseList[savingsID][indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeExpenseCell") as! ExpenseCell
+            cell.selectionStyle = .none
             cell.setExpense(expense: expense)
             return cell
         }
         else {
             let income = incomeList[savingsID][indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeIncomeCell") as! IncomeCell
+            cell.selectionStyle = .none
             cell.setIncome(income: income)
             return cell
         }
@@ -166,7 +160,7 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == .delete {
             if tableView == self.expenseTableView {
                 if expenseList[savingsID][indexPath.row].isExecuted {
-                    savingsList[savingsID].totalAmount += expenseList[savingsID][indexPath.row].amount
+                    savingsList[savingsID].amount += expenseList[savingsID][indexPath.row].amount
                 }
                 expenseList[savingsID].remove(at: indexPath.row)
                 // Notify to HomeController and ExpenseController
@@ -175,7 +169,7 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
             }
             else {
                 if expenseList[savingsID][indexPath.row].isExecuted {
-                    savingsList[savingsID].totalAmount -= incomeList[savingsID][indexPath.row].amount
+                    savingsList[savingsID].amount -= incomeList[savingsID][indexPath.row].amount
                 }
                 incomeList[savingsID].remove(at: indexPath.row)
                 // Notify to HomeController and ExpenseController
@@ -187,7 +181,7 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
 }
 
 func computeMark() -> (Bool, Float) {
-    let value = savingsList[savingsID].totalAmount - defaultTarget.amount
+    let value = savingsList[savingsID].amount - defaultTarget.amount
     if value < 0 {
         return (false, -value)
     }
@@ -209,5 +203,5 @@ func prepareSavings(id: Int) {
             e0 += expenseList[id][i].amount
         }
     }
-    savingsList[savingsID].totalAmount = savingsList[savingsID].totalAmount + i0 - e0
+    savingsList[savingsID].amount = savingsList[savingsID].amount + i0 - e0
 }

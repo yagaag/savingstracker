@@ -23,10 +23,10 @@ class ExpenseCell: UITableViewCell {
         expenseList[savingsID][self.indexPath!.row].isExecuted = sender.isOn
         
         if sender.isOn {
-            savingsList[savingsID].totalAmount -= expenses[self.indexPath!.row].amount
+            savingsList[savingsID].amount -= expenses[self.indexPath!.row].amount
         }
         else {
-            savingsList[savingsID].totalAmount += expenses[self.indexPath!.row].amount
+            savingsList[savingsID].amount += expenses[self.indexPath!.row].amount
         }
         
         // Notify to HomeController and ExpenseController
